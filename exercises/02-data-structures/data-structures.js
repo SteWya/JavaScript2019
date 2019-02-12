@@ -20,8 +20,6 @@ function accessingAnArray() {
   return cars[0];
 }
 
-
-
 /**
  * Loop through the array using a for loop and return the highest number
  * @param  { array }
@@ -31,14 +29,21 @@ function accessingAnArray() {
  * highestNumber([5, 1, 2, 3, 10]) // [10]
  *
  **/
-function highestNumber(array) {
+function highestNumber() {
   console.log(array);
-  var numbers = [5, 7, 15, 2];
-  for (i=0; i < numbers.length; i++);
- /* if (numbers[1]) */
-}
-  
+  var array = [1, 2, 3, 4, 10, -1];
+  var largest = 4;
 
+  for (i = 0; i <= largest; i++) {
+    if (array[i] > largest) {
+      largest = array[i];
+
+      return largest;
+    }
+
+    /* if (numbers[1]) */
+  }
+}
 /**
  * Combine an array by using the spread operator
  * @param  {array} array1
@@ -48,7 +53,12 @@ function highestNumber(array) {
  * combineArray(['Japan','China','India'], ['USA','UK']) // ['Japan','China','India','USA','UK']
  **/
 
-function combineArray(array1, array2) {}
+function combineArray() {
+  let arr1 = ["HTML"];
+  let arr2 = ["CSS"];
+  let arr3 = [...arr1, ...arr2];
+  return arr3;
+}
 
 /**
  * A palindrom is a word, phrase, or sequence that reads the same backward as forward, e.g., madam, nurses or run.
@@ -59,7 +69,15 @@ function combineArray(array1, array2) {}
  *
  */
 
-function isPalindrome(str) {}
+function isPalindrome(str) {
+  var re = /[\W_]/g;
+  var lowRegStr = str.toLowerCase().replace(re, "");
+  var reverseStr = lowRegStr
+    .split("")
+    .reverse()
+    .join("");
+  return reverseStr === lowRegStr;
+}
 
 /**
  * Make an object that represents a dog called myDog which contains the keys
@@ -68,7 +86,15 @@ function isPalindrome(str) {}
  * @return {object}
  */
 
-function createDogObject() {}
+function createDogObject() {
+  const myDog = {
+    name: "Rover",
+    legs: 4,
+    tails: 1,
+    owners: ["John", "Samantha"]
+  };
+  return myDog;
+}
 
 /**
  * Access testObj and return the value for hat inside clothes (which should be ballcap)
@@ -82,7 +108,7 @@ function accessObject() {
   };
   // Only change code below this line
 
-  var hatValue = clothes; // Change only this line of code
+  var hatValue = clothes["hat"]; // Change only this line of code
 
   return hatValue;
 }
@@ -119,6 +145,8 @@ function returnObjectProperties() {
     name: "Rocket"
   };
   //Add code here
+  var keys = Object.keys(dog);
+  return keys;
   //hint you need to return an array
 }
 
